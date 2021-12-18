@@ -1,0 +1,21 @@
+{
+  "name": "123projetei",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Leandro de Freitas Piassetta",
+  "license": "ISC",
+  "devDependencies": {
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "sequelize": "^6.12.0"
+  }
+}
