@@ -4,6 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     cpf: { type: DataTypes.INTEGER, primaryKey: true },
     nome: DataTypes.STRING,
     telefone: DataTypes.STRING,
+    email: DataTypes.STRING,
+    senha: DataTypes.STRING,
     dataDeNascimento: DataTypes.DATE
   });
   return PessoaFisica;

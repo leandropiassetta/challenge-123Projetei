@@ -2,7 +2,7 @@ const serviceDoLogin = require('../services/serviceDoLogin');
 
 const loginUsuario = async (req, res) => {
   const { email } = req.body;
-
+  console.log(email);
   const token = await serviceDoLogin.loginUsuario(email);
   // Se conter uma propriedade mensage, retorna o status 400 de 'Bad request' com a mensagem que eu defino na camada services.
   if (token.message) {

@@ -13,6 +13,12 @@ module.exports = {
       telefone: {
         type: Sequelize.STRING
       },
+      email: {
+        type: Sequelize.STRING
+      },
+      senha: {
+        type: Sequelize.STRING
+      },
       dataDeNascimento: {
         type: Sequelize.DATE
       },
