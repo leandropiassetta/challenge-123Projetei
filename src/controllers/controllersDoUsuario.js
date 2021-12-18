@@ -1,5 +1,5 @@
 const servicesDoUsuario = require('../services/servicesDoUsuario');
 
-const criandoUsuario = async (req, res) => {};
+const criarUsuario = async (req, res) => {};
 
-module.exports = { criandoUsuario };
+module.exports = { criarUsuario };
