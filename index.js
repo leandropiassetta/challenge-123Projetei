@@ -9,7 +9,7 @@ const rotaLogin = require('./src/api/routes/rotaLogin');
 const rotasDoUsuario = require('./src/api/routes/rotasUsuario');
 
 app.use('/login', rotaLogin);
-app.use('/usuario', rotasDoUsuario);
+app.use('/usuarios', rotasDoUsuario);
 
 app.listen(PORT, () =>
   console.log(`O servidor está funcionando no http://localhost:${PORT}`)

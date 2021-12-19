@@ -24,6 +24,26 @@ const criarUsuario = async (infoUsuario) => {
   return { token };
 };
 
+const listarUsuarios = async () => {
+  const usuarios = await PessoasFisicas.findAll({
+    attributes: {
+      exclude: ['senha']
+    }
+  });
+
+  return usuarios;
+};
+
+const visualizarUsuario = async (id) => {
+  const usuario = await PessoasFisicas.findByPk(id);
+
+  if (usuario === null) {
+    return { message: 'Não existe esse usuário' };
+  }
+
+  return usuario;
+};
+
 const editarUsuario = async (id, /* tokenId */ infoUsuario) => {
   // if (infoUsuario.cpf) {
   //   return { message: 'CPF não pode ser editado!' };
@@ -50,14 +70,10 @@ const deletarUsuario = async (id) => {
   return usuario;
 };
 
-const buscaUser = async () => {
-  const usuarios = await PessoasFisicas.findAll({
-    attributes: {
-      exclude: ['senha']
-    }
-  });
-
-  return usuarios;
+module.exports = {
+  criarUsuario,
+  listarUsuarios,
+  visualizarUsuario,
+  editarUsuario,
+  deletarUsuario
 };
-
-module.exports = { criarUsuario, buscaUser, editarUsuario, deletarUsuario };
