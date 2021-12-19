@@ -7,7 +7,7 @@ const {
 } = require('../../controllers/controllersDoUsuario');
 
 router.post('/', criarUsuario);
-router.put('/', editarUsuario);
+router.put('/:id', editarUsuario);
 router.get('/', buscaUser);
 
 module.exports = router;

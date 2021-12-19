@@ -13,12 +13,12 @@ const criarUsuario = async (req, res) => {
 
 const editarUsuario = async (req, res) => {
   const { id } = req.params;
-  const tokenId = req.user.id;
+  // const tokenId = req.user.id;
   const infoUsuario = req.body;
 
   const usuario = await servicesDoUsuario.editarUsuario(
     id,
-    tokenId,
+    // tokenId,
     infoUsuario
   );
 
@@ -29,7 +29,7 @@ const editarUsuario = async (req, res) => {
   return res.status(200).json(usuario);
 };
 
-const buscaUser = async (req, res) => {
+const buscaUser = async (_req, res) => {
   const usuarios = await servicesDoUsuario.buscaUser();
 
   return res.status(200).json(usuarios);

@@ -24,18 +24,26 @@ const criarUsuario = async (infoUsuario) => {
   return { token };
 };
 
-const editarUsuario = async (id, tokenId, infoUsuario) => {
-  if (infoUsuario.cpf) {
-    return { message: 'CPF não pode ser editado!' };
+const editarUsuario = async (id, /* tokenId */ infoUsuario) => {
+  // if (infoUsuario.cpf) {
+  //   return { message: 'CPF não pode ser editado!' };
+  // }
+  const usuario = await PessoasFisicas.update(
+    { ...infoUsuario },
+    { where: { id: Number(id) } }
+  );
+
+  if (usuario[0] === 0) {
+    return { message: 'Usuário não encontrado ou não atualizado!' };
   }
 
-  return PessoasFisicas.update({ infoUsuario }, { where: { id: Number(id) } });
+  return { message: 'Usuário atualizado com sucesso!' };
 };
 
 const buscaUser = async () => {
   const usuarios = await PessoasFisicas.findAll({
     attributes: {
-      exclude: ['password']
+      exclude: ['senha']
     }
   });
 
