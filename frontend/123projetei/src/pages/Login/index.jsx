@@ -24,9 +24,9 @@ function Login() {
 
     function loginIsValid() {
       if(nome === 'admin' && senha === 'admin') {
-        setDesautorizado(false)
+        setDesautorizado(false);
       } else {
-        setDesautorizado(true)
+        setDesautorizado(true);
       }
     }
 
