@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import axiosApi from '../api/request';
 
 function Forms() {
+
   const [nome, setNome] = useState('');
   const [cpf, setCpf] = useState('');
   const [telefone, setTelefone] = useState('');
   const [email, setEmail] = useState('');
   const [nascimento, setNascimento] = useState('');
+  
+  const dispatch = useDispatch();
+
 
   function digitarNome({target}) {
     setNome(target.value);
@@ -28,8 +33,12 @@ function Forms() {
     setNascimento(target.value);
   }
 
-  function cadastrarUsuario() {
-    axiosApi.post('/usuarios', { nome, cpf, telefone, email, dataDeNascimento: nascimento });
+  async function cadastrarUsuario() {
+    await axiosApi.post('/usuarios', { nome, cpf, telefone, email, dataDeNascimento: nascimento });
+
+    await axiosApi.get('/usuarios')
+    .then((usuario) => dispatch({ type: 'buscarUsuarios', usuarios: usuario.data }))
+
   }
 
   return(

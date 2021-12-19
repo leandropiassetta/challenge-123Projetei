@@ -1,12 +1,16 @@
 const initialState = {
-  buscarNovoUsuario: false,
+  usuarios: [],
 };
 
 const reducer = (state = initialState, action) => {
-  if (action.type === 'buscarUsuario') {
+  if (action.type === 'buscarUsuarios') {
     return {
-      buscarNovoUsuario: true,
+      usuarios: action.usuarios,
     };
+  }
+
+  if (action.type === 'pararBuscaDeUsuario') {
+    return {};
   }
 
   return state;

@@ -10,6 +10,8 @@ function ListarUsuarios({ usuarios }) {
           <th>Telefone</th>
           <th>Email</th>
           <th>Data de Nascimento</th>
+          <th>EDITAR</th>
+          <th>EXCLUIR</th>
           </tr>
         </thead>
         <tbody>
