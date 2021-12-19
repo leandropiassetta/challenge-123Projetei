@@ -1,11 +1,10 @@
-const { Usuario } = require('../models');
+const { Usuarios } = require('../models');
 const { createToken } = require('../api/auth/jwt');
 
 const loginUsuario = async (email) => {
   // Meu service login irá receber um email do controller e vai verificar no banco de dados
   // se tem algum usuário cadastrado lá dentro com o email recebido...
-  console.log(Usuario);
-  const usuario = await Usuario.findOne({ where: { email } });
+  const usuario = await Usuarios.findOne({ where: { email } });
   // Se não tiver retorna uma mensagem de erro //
   if (!usuario || undefined) {
     return { message: 'Campos inválidos' };
