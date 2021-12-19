@@ -7,22 +7,22 @@ function Login() {
   const navegacao = useNavigate()
 
   useEffect(() => {
-    loginIsValid();
-  }, [loginIsValid]);
+    validarLogin();
+  }, [validarLogin]);
   
-    function handleNome({target}) {
+    function digitarNome({target}) {
       setNome(target.value);
     }
 
-    function handleSenha({target}) {
+    function digitarSenha({target}) {
       setSenha(target.value);
     }
 
-    function handleClick() {
+    function Clicar() {
       navegacao('/home');
     }
 
-    function loginIsValid() {
+    function validarLogin() {
       if(nome === 'admin' && senha === 'admin') {
         setDesautorizado(false);
       } else {
@@ -32,9 +32,9 @@ function Login() {
 
   return (
     <div>
-      <input type="text" onChange= { handleNome } />
-      <input type="text" onChange= { handleSenha }/>
-      <button disabled={desautorizado} onClick={ handleClick }>ENTRAR</button>
+      <input type="text" onChange= { digitarNome } />
+      <input type="text" onChange= { digitarSenha }/>
+      <button disabled={desautorizado} onClick={ Clicar }>ENTRAR</button>
     </div>
   );
 

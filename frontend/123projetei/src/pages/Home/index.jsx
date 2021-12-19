@@ -1,5 +1,6 @@
 import { useCallback, useState, useEffect } from 'react';
 import ListarUsuarios  from '../../components/ListarUsuarios';
+import Forms from '../../components/Form';
 import axiosApi from '../../api/request';
 function Home() {
 
@@ -18,6 +19,7 @@ function Home() {
 
     return(
       <div>
+        <Forms />
         <ListarUsuarios usuarios={ usuarios } />
       </div>
     )

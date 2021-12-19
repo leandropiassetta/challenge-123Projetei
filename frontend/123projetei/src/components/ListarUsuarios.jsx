@@ -5,11 +5,10 @@ function ListarUsuarios({ usuarios }) {
         <thead>
           <tr>
           <th>id</th>
-          <th>Nome</th>
           <th>CPF</th>
+          <th>Nome</th>
           <th>Telefone</th>
           <th>Email</th>
-          <th>Senha</th>
           <th>Data de Nascimento</th>
           </tr>
         </thead>
