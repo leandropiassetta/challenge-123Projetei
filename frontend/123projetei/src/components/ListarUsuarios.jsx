@@ -1,4 +1,4 @@
-function ListarUsuarios(usuarios) {
+function ListarUsuarios({ usuarios }) {
   return(
     <div>
       <table>
@@ -14,11 +14,15 @@ function ListarUsuarios(usuarios) {
           </tr>
         </thead>
         <tbody>
-   
+        { usuarios.map((infoUsuario, indice) => (
+          <tr key={ indice }>
+          { Object.values(infoUsuario).map((dadosUsuario, i) => (
+            <td key={ i }>{dadosUsuario}</td>)) }
+          </tr>)) }
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
 export default ListarUsuarios;

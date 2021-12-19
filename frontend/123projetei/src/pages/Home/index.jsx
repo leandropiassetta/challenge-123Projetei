@@ -1,4 +1,5 @@
 import { useCallback, useState, useEffect } from 'react';
+import ListarUsuarios  from '../../components/ListarUsuarios';
 import axiosApi from '../../api/request';
 function Home() {
 
@@ -9,15 +10,15 @@ function Home() {
       axiosApi.get('/usuarios')
       .then((usuario) => setUsuarios(usuario.data))
       .catch((error) => `Ocorreu um erro chamado: ${error}`);
-    }, []);
+    }, [usuarios]);
     
     useEffect(() => {
       listarUsuarios();
-    }, [listarUsuarios, usuarios]);
+    }, []);
 
     return(
       <div>
-        oi
+        <ListarUsuarios usuarios={ usuarios } />
       </div>
     )
 }
