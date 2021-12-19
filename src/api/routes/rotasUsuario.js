@@ -3,11 +3,11 @@ const router = require('express').Router();
 const {
   criarUsuario,
   buscaUser,
-  editaUsuario
+  editarUsuario
 } = require('../../controllers/controllersDoUsuario');
 
 router.post('/', criarUsuario);
-router.put('/', editaUsuario);
+router.put('/', editarUsuario);
 router.get('/', buscaUser);
 
 module.exports = router;
