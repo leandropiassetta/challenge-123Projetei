@@ -37,7 +37,17 @@ const editarUsuario = async (id, /* tokenId */ infoUsuario) => {
     return { message: 'Usuário não encontrado ou não atualizado!' };
   }
 
-  return { message: 'Usuário atualizado com sucesso!' };
+  return usuario;
+};
+
+const deletarUsuario = async (id) => {
+  const usuario = await PessoasFisicas.destroy({ where: { id: Number(id) } });
+
+  if (usuario === 0) {
+    return { message: 'Usuário não encontrado!' };
+  }
+
+  return usuario;
 };
 
 const buscaUser = async () => {
@@ -50,4 +60,4 @@ const buscaUser = async () => {
   return usuarios;
 };
 
-module.exports = { criarUsuario, buscaUser, editarUsuario };
+module.exports = { criarUsuario, buscaUser, editarUsuario, deletarUsuario };

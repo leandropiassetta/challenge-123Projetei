@@ -26,7 +26,19 @@ const editarUsuario = async (req, res) => {
     return res.status(400).json({ message: usuario.message });
   }
 
-  return res.status(200).json(usuario);
+  return res.status(200).json({ message: 'Atualizado com sucesso!' });
+};
+
+const deletarUsuario = async (req, res) => {
+  const { id } = req.params;
+
+  const usuario = await servicesDoUsuario.deletarUsuario(id);
+
+  if (usuario.message) {
+    return res.status(400).json({ message: usuario.message });
+  }
+
+  res.status(200).json({ message: 'Deletado com sucesso!' });
 };
 
 const buscaUser = async (_req, res) => {
@@ -35,4 +47,4 @@ const buscaUser = async (_req, res) => {
   return res.status(200).json(usuarios);
 };
 
-module.exports = { criarUsuario, buscaUser, editarUsuario };
+module.exports = { criarUsuario, buscaUser, editarUsuario, deletarUsuario };
