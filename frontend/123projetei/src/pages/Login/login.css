@@ -8,6 +8,10 @@
   padding: 1em;
 }
 
+.login h1 {
+  color: orangered;
+}
+
 .login input {
   border-color: orangered;
 }
