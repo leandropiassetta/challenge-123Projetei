@@ -1,6 +1,6 @@
 # challenge-123Projetei
 
-## Primeiro Passo - fazer o dowload da aplicação com o comando: gitclone https://github.com/leandropiassetta/challenge-123Projetei.git
+## Primeiro Passo - fazer o dowload da aplicação com o comando: git clone https://github.com/leandropiassetta/challenge-123Projetei.git
 
 ## Segundo Passo – Criar uma conta no site https://www.db4free.net/ para criação do seu banco de Dados
 
