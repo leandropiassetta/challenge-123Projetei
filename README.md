@@ -13,7 +13,7 @@
 ## Quinto Passo –  Em outro terminal, vamos entrar na pasta frontend, instalar as dependências e iniciar o servidor com o comando cd challenge-123Projetei/frontend/123projetei && npm i && npm start
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-## OBSERVAÇÂO:
+## OBSERVAÇÃO:
 
 Para utilizar a aplicação, configurei apenas um <b>usuário e uma senha</b>, <b>sua senha é admin e seu usuário é admin</b>, utilize ambos para passar da página de Login
 
