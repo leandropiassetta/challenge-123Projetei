@@ -32,11 +32,12 @@ function Login() {
     }
 
   return (
-    <div className="login">
-      <input type="text" onChange= { digitarNome } />
-      <input type="text" onChange= { digitarSenha }/>
-      <button id="btn" disabled={desautorizado} onClick={ Clicar }>ENTRAR</button>
-    </div>
+      <div className="login">
+        <h1>Faça seu Login</h1>
+        <input type="text" placeholder='Digite seu nome' onChange= { digitarNome } />
+        <input type="text" placeholder='Digite sua senha' onChange= { digitarSenha }/>
+        <button id="btn" disabled={desautorizado} onClick={ Clicar }>ENTRAR</button>
+      </div>
   );
 
 }
