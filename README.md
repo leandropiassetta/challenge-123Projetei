@@ -11,3 +11,10 @@
 ## Quarto Passo – Vamos criar o banco de dados com o Sequelize, usando o comando npx sequelize db:create, vamos criar as tabelas com o comando npx sequelize db:migrate, caso você queira por alguma razão deletar  seu banco de dados, utilize o comando npx sequelize db:drop
 
 ## Quinto Passo –  Em outro terminal, vamos entrar na pasta frontend, instalar as dependências e iniciar o servidor com o comando cd challenge-123Projetei/frontend/123projetei && npm i && npm start
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+## OBSERVAÇÂO:
+
+Para utilizar a aplicação, configurei apenas um <b>usuário e uma senha</b>, <b>sua senha é admin e seu usuário é admin</b>, utilize ambos para passar da página de Login
+
+:)
