@@ -1,6 +1,6 @@
-const { verifyToken } = require('../api/auth/jwt');
+const { verificarToken } = require('../api/auth/jwt');
 
-const validateToken = (req, res, next) => {
+const validarToken = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization) {
@@ -8,7 +8,7 @@ const validateToken = (req, res, next) => {
   }
 
   try {
-    const dataUser = verifyToken(authorization);
+    const dataUser = verificarToken(authorization);
     req.user = dataUser;
   } catch ({ error: message }) {
     return res.status(401).json({ message: 'Token expirado ou inválido' });
@@ -18,5 +18,5 @@ const validateToken = (req, res, next) => {
 };
 
 module.exports = {
-  validateToken
+  validarToken
 };

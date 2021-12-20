@@ -4,6 +4,7 @@ const criarUsuario = async (req, res) => {
   const infoUsuario = req.body;
 
   const usuarioNovo = await servicesDoUsuario.criarUsuario(infoUsuario);
+  console.log(usuarioNovo);
 
   if (usuarioNovo.message) {
     return res.status(409).json({ message: usuarioNovo.message });

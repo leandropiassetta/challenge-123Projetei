@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const secret = process.env.SECRET || 'secret';
 
-const createToken = (user) => {
+const criarToken = (user) => {
   const payload = { ...user };
 
   const jwtConfig = {
@@ -16,13 +16,13 @@ const createToken = (user) => {
   return token;
 };
 
-const verifyToken = (token) => {
+const verificarToken = (token) => {
   const payload = jwt.verify(token, secret);
 
   return payload;
 };
 
 module.exports = {
-  createToken,
-  verifyToken
+  criarToken,
+  verificarToken
 };

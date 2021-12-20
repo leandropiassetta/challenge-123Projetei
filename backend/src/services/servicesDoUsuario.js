@@ -1,5 +1,5 @@
 const { PessoasFisicas } = require('../models');
-const { createToken } = require('../api/auth/jwt');
+const { criarToken } = require('../api/auth/jwt');
 
 const criarUsuario = async (infoUsuario) => {
   const { cpf, nome, telefone, email, senha, dataDeNascimento } = infoUsuario;
@@ -19,7 +19,7 @@ const criarUsuario = async (infoUsuario) => {
     dataDeNascimento
   });
 
-  const token = createToken({ id, email });
+  const token = criarToken({ id, email });
 
   return { token };
 };
