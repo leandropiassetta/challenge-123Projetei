@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './login.css'
 function Login() {
   const [nome, setNome] = useState();
   const [senha, setSenha] = useState();
@@ -31,7 +32,7 @@ function Login() {
     }
 
   return (
-    <div>
+    <div className="login">
       <input type="text" onChange= { digitarNome } />
       <input type="text" onChange= { digitarSenha }/>
       <button disabled={desautorizado} onClick={ Clicar }>ENTRAR</button>

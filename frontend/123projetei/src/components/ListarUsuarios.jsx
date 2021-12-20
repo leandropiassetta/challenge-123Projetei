@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import EditarForms from '../components/EditarForms';
+import axiosApi from '../api/request';
 function ListarUsuarios({ usuarios, atualizando }) {
-  console.log(atualizando)
 
   const dispatch = useDispatch();
-  
+
   const [idDeEdicao, setIdDeEdicao] = useState('');
 
   function editarUsuario(indice) {
@@ -15,9 +15,12 @@ function ListarUsuarios({ usuarios, atualizando }) {
     dispatch({ type:'edicao', atualizando:true });
   }
 
-  function excluirUsuario(indice) {
+  async function excluirUsuario(indice) {
     const { id } = usuarios[indice];
-    
+    await axiosApi.delete(`/usuarios/${id}`);
+
+    await axiosApi.get('/usuarios')
+    .then((usuario) => dispatch({ type: 'buscarUsuarios', usuarios: usuario.data }));
   }
 
   return(
