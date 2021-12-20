@@ -35,7 +35,7 @@ function Login() {
     <div className="login">
       <input type="text" onChange= { digitarNome } />
       <input type="text" onChange= { digitarSenha }/>
-      <button disabled={desautorizado} onClick={ Clicar }>ENTRAR</button>
+      <button id="btn" disabled={desautorizado} onClick={ Clicar }>ENTRAR</button>
     </div>
   );
 
